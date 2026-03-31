@@ -1,0 +1,268 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --bg-main: #0b0f1a;
+  --bg-secondary: #12182b;
+  --accent: #00cfff;
+  --accent-soft: #4ddfff;
+  --text-main: #e6f1ff;
+  --text-muted: #8aa0c6;
+  --card-bg: #161d33;
+}
+
+/* =========================
+   BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+/* FONDO SUTIL GLOBAL */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(circle at 20% 20%, rgba(0,207,255,0.08), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0,207,255,0.05), transparent 40%);
+
+    z-index: -1;
+}
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+h1, h2, h3 {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 10px auto;
+}
+
+p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 15px;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+
+    background: rgba(11,15,26,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav a {
+    margin-left: 20px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: var(--accent-soft);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 20px;
+
+    background: radial-gradient(circle at top, #12182b, #0b0f1a);
+    position: relative;
+    overflow: hidden;
+}
+
+/* FONDO ANIMADO */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+
+    background: radial-gradient(circle, rgba(0,207,255,0.08), transparent 60%);
+    animation: moveBg 12s linear infinite;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(50px, 50px); }
+    100% { transform: translate(0, 0); }
+}
+
+.hero h1 {
+    font-size: 52px;
+    max-width: 800px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+
+    background: linear-gradient(90deg, #ffffff, #00cfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    letter-spacing: 2px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn-primary {
+    background: linear-gradient(135deg, #00cfff, #4ddfff);
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    padding: 12px 26px;
+    border-radius: 40px;
+    text-decoration: none;
+
+    box-shadow: 0 5px 20px rgba(0, 207, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 10px 30px rgba(0, 207, 255, 0.5);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section.light {
+    background: var(--bg-secondary);
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,0.04);
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(120deg, transparent, rgba(0,207,255,0.08), transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 207, 255, 0.15);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-soft);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #05070d;
+    color: var(--text-muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
