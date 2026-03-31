@@ -266,3 +266,7 @@ footer {
         font-size: 32px;
     }
 }
+.btn-primary {
+  position: relative;
+  z-index: 10;
+}
