@@ -267,8 +267,7 @@ footer {
     .hero h1 {
         font-size: 32px;
     }
-}
-.btn-primary {
+    .btn-primary {
   position: relative;
   z-index: 10;
 }
@@ -311,4 +310,13 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.card {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente (opcional) */
+    flex-wrap: wrap;         /* para que no se rompa en mobile */
+}
+
 }
