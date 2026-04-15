@@ -238,7 +238,18 @@ a {
 a:hover {
     color: var(--accent-soft);
 }
+.hero::before {
+    pointer-events: none;
+}
 
+.hero::before {
+    pointer-events: none;
+}
+
+.btn-primary {
+    position: relative;
+    z-index: 2;
+}
 /* =========================
    FOOTER
 ========================= */
