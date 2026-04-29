@@ -1,90 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frontend Developer en Buenos Aires. Diseño y desarrollo de páginas web modernas con HTML y CSS.">
- <title>Fabian Brodyk | Frontend Developer en Buenos Aires</title>
+  <meta name="description"
+    content="Frontend Developer en Buenos Aires. Desarrollo páginas web modernas, rápidas y enfocadas en conversión.">
+  <title>Fabian Brodyk | Frontend Developer</title>
+
   <link rel="stylesheet" href="./estudio.css/estudio.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
-<nav class="nav">
-  <h2 class="logo" >FBS</h2>
-  <div>
-    <a href="#projects">Proyectos</a>
-    <a href="#about">Sobre mí</a>
-    <a href="#contact">Contacto</a>
-  </div>
-</nav>
+  <nav class="nav" id="navbar">
+    <h2 class="logo">
+      <span>F</span><span>B</span><span>S</span>
+    </h2>
 
-<section class="hero">
-  <h1>Tu presencia online, llevada a otro nivel</h1>
-  <p>Diseño y desarrollo páginas web modernas, pensadas para destacar tu marca y conectar con tus clientes | HTML, CSS</p>
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <div class="hero-btn">
-    <a href="#contact" class="btn-primary">Quiero mi Web</a>
-  </div>
-</section>
+    <div class="nav-links" id="navLinks">
+      <a href="#projects">Proyectos</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
 
-<section id="projects" class="section">
-  <h2>Proyectos</h2>
+  <!-- HERO -->
+  <section class="hero">
 
-  <div class="grid">
-    
-  <div class="card">
-    <h3>Lolaland</h3>
-    <p>Landing moderna con diseño visual fuerte</p>
-    <a href="https://webstudio-digital.github.io/proyectoLolaland/" target="_blank" class="btn-primary">Ver proyecto</a>
-  </div>
+    <img src="./images/logo.jpeg" alt="FBS Logo fondo" class="hero-bg-logo">
 
-  <div class="card">
-    <h3>Estetica Gladys Giordano</h3>
-    <p>Landing moderna estilo Estetica de Belleza</p>
-    <a href="https://webstudio-digital.github.io/EsteticaGladysGiordano/" target="_blank" class="btn-primary">Ver proyecto</a>
-  </div>
+    <div class="hero-content">
+      <h1>Diseño webs que venden, no solo que se ven bien</h1>
 
-  <div class="card">
-    <h3>Espacio Fénix</h3>
-    <p>Web elegante con identidad de marca</p>
-    <a href="https://webstudio-digital.github.io/tuespaciofenix/" target="_blank" class="btn-primary">Ver proyecto</a>
-  </div>
+      <p>Frontend Developer en Buenos Aires. Creo páginas modernas, rápidas y enfocadas en resultados reales.</p>
 
-  <div class="card">
-    <h3>Landing basica de compra de producto</h3>
-    <p>web clasica con boton de compra a mercado pago y redireccion a whatsapp</p>
-    <a href="https://webstudio-digital.github.io/recetarioweb/" target="_blank" class="btn-primary">Ver proyecto</a>
-  </div>
+      <div class="hero-btn">
+        <a href="#contact" class="btn-primary">Trabajemos juntos</a>
+      </div>
+    </div>
 
-</div>
+  </section>
 
-<section class="section light">
+
+
+  <!-- PROYECTOS -->
+  <section id="projects" class="section">
+    <h2>Proyectos</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="./images/lolaland.jpeg" alt="Proyecto Lolaland">
+
+        <h3>Lolaland</h3>
+        <p>Landing de alto impacto visual diseñada para captar atención en segundos y guiar al usuario hacia la acción.
+        </p>
+
+        <a href="https://webstudio-digital.github.io/proyectoLolaland/" target="_blank" class="btn-primary">
+          Ver proyecto
+        </a>
+      </div>
+
+
+      <div class="card">
+        <img src="./images/estetica.jpeg" alt="Estética Gladys Giordano">
+
+        <h3>Estética Gladys Giordano</h3>
+        <p>Sitio profesional enfocado en generar confianza, destacar servicios y convertir visitas en clientes reales.
+        </p>
+
+        <a href="https://webstudio-digital.github.io/EsteticaGladysGiordano/" target="_blank" class="btn-primary">
+          Ver proyecto
+        </a>
+      </div>
+
+
+      <div class="card">
+        <img src="./images/fenix.jpeg" alt="Espacio Fénix">
+
+        <h3>Espacio Fénix</h3>
+        <p>Web con identidad visual sólida, pensada para transmitir profesionalismo y reforzar la marca.</p>
+
+        <a href="https://webstudio-digital.github.io/tuespaciofenix/" target="_blank" class="btn-primary">
+          Ver proyecto
+        </a>
+      </div>
+
+
+      <div class="card">
+        <img src="./images/recetario.jpeg" alt="Landing de producto">
+
+        <h3>Landing de producto</h3>
+        <p>Página optimizada para ventas, con estructura clara, CTA estratégicos e integración directa a WhatsApp.</p>
+
+        <a href="https://webstudio-digital.github.io/recetarioweb/" target="_blank" class="btn-primary">
+          Ver proyecto
+        </a>
+      </div>
+
+      <div class="card">
+        <img src="./images/urban.jpeg" alt="Proyecto URBN ropa urbana">
+
+        <h3>URBN</h3>
+        <p>Ecommerce moderno de ropa urbana con diseño atractivo</p>
+
+        <a href="https://webstudio-digital.github.io/URBN-ropa-urbana/" target="_blank" class="btn-primary">
+          Ver proyecto
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section class="section tech">
   <h2>Tecnologías</h2>
-  <p>HTML • CSS • Responsive Design • UI Design • Git</p>
+
+  <div class="tech-grid">
+    <div class="tech-item">
+      <h3>Frontend</h3>
+      <p>HTML5, CSS3, Responsive Design</p>
+    </div>
+
+    <div class="tech-item">
+      <h3>Diseño</h3>
+      <p>UI Design, UX básico, Figma</p>
+    </div>
+
+    <div class="tech-item">
+      <h3>Herramientas</h3>
+      <p>Git, GitHub, VS Code</p>
+    </div>
+
+    <div class="tech-item">
+      <h3>Aprendiendo</h3>
+      <p>JavaScript, React</p>
+    </div>
+  </div>
 </section>
 
-<section id="about" class="section">
-  <h2>Sobre mí</h2>
-  <p>Soy <strong>Fabian Alejandro Brodyk Solis</strong>, tengo 29 años y vivo en Buenos Aires. Actualmente estoy en proceso de transición hacia el desarrollo web, formándome como <strong>Frontend Developer</strong>.</p>
+  <!-- SOBRE MI -->
+  <section id="about" class="section">
+    <h2>Sobre mí</h2>
 
-  <p>Tengo formación en <a href="https://pub.coderhouse.com/certificates/6f258327-109f-458a-910d-2e249b11cd92?v=1" target="_blank">Coderhouse</a> y estoy por comenzar <strong class="highlight">JavaScript</strong>. Aprendo rápido y tengo un fuerte interés por el diseño, logrando resultados visuales sólidos en poco tiempo.</p>
+    <p>Soy <strong>Fabian Brodyk</strong>, Frontend Developer en Buenos Aires.</p>
 
-  <p>Estoy enfocado al 100% en crecer dentro del mundo del desarrollo web.</p>
+    <p>Me especializo en crear sitios web modernos, rápidos y visualmente atractivos, pensados para transmitir confianza
+      y mejorar la presencia digital de cada proyecto.</p>
+
+    <p>Estoy en constante formación (actualmente avanzando en JavaScript) y enfocado al 100% en crecer dentro del
+      desarrollo web.</p>
+
+    <p>
+      Formación en
+      <a href="https://pub.coderhouse.com/certificates/6f258327-109f-458a-910d-2e249b11cd92?v=1" target="_blank">
+        Coderhouse
+      </a>
+    </p>
+
+  </section>
+
+<section class="section combo-section">
+  <div class="combo-grid">
+
+    <!-- RESULTADOS -->
+    <div class="combo-card">
+      <h2>Resultados</h2>
+
+      <div class="results">
+        <div class="result-item">
+          <span>Conversiones</span>
+          <h3>+40%</h3>
+        </div>
+
+        <div class="result-item">
+          <span>Velocidad</span>
+          <h3>+60%</h3>
+        </div>
+
+        <div class="result-item">
+          <span>Mobile</span>
+          <h3>100%</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- CÓMO TRABAJO -->
+    <div class="combo-card">
+      <h2>Cómo trabajo</h2>
+
+      <div class="steps">
+        <div><span>01</span> Entiendo tu negocio</div>
+        <div><span>02</span> Diseño enfocado en conversión</div>
+        <div><span>03</span> Desarrollo rápido y optimizado</div>
+        <div><span>04</span> Entrega lista para vender</div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section id="contact" class="section">
-  <h2>Contacto</h2>
-  <p>¿Tenés un proyecto o una oportunidad? Hablemos.</p>
+<section class="section cta-premium">
+  <div class="cta-card">
 
-  <a href="https://wa.me/+541144490232?text=Hola,%20quiero%20más%20información" class="btn-primary">Enviar mensaje</a>
+    <h2>¿Listo para tener una web que genere clientes?</h2>
+
+    <p>Diseño páginas enfocadas en conversión, velocidad y resultados reales para tu negocio.</p>
+
+    <a href="https://wa.me/+541144490232?text=Hola,%20quiero%20una%20web" 
+       class="btn-primary">
+       Quiero mi web ahora
+    </a>
+<p class="cta-urgency">Respuesta en menos de 24hs</p>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 Fabian Brodyk</p>
-</footer>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-copy">© 2026 Fabian Brodyk. Todos los derechos reservados.</p>
+
+      <nav class="footer-nav">
+        <a href="#">Inicio</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Contacto</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./script.js/script.js"></script>
+  <div class="cursor-glow"></div>
 
 </body>
+
 </html>
