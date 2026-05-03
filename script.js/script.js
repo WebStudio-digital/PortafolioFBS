@@ -65,12 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const cards = document.querySelectorAll(".card");
 
-window.addEventListener("scroll", () => {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-
-    if (top < window.innerHeight - 80) {
-      card.classList.add("active");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
     }
   });
+}, {
+  threshold: 0.15
 });
+
+cards.forEach(card => observer.observe(card));

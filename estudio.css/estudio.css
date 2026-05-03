@@ -515,7 +515,7 @@ footer {
   color: #555;
 }
 
-/
+
 
 
 .footer {
@@ -787,76 +787,34 @@ footer {
 ========================= */
 @media (max-width: 768px) {
 
+    /* NAV */
     .nav {
         flex-direction: column;
         text-align: center;
-    }
-
-    .hero {
-        height: auto;
-        padding: 80px 20px;
-
-        background-image: url("../images/logo.jpeg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-    }
-
-    .hero .btn-primary {
-        font-size: 1.5rem;
-        padding: 28px 40px;
-        z-index: 10;
-    }
-
-    .logo {
-        animation: float 3s ease-in-out infinite;
-    }
-
-    .card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .nav {
         padding: 18px 25px;
     }
 
-    /* mostrar hamburguesa */
+    /* HAMBURGUESA */
     .hamburger {
         display: flex;
         z-index: 200;
     }
 
-    /* links ocultos por defecto */
+    /* NAV LINKS */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-
         width: 70%;
         height: 100vh;
-
         background: rgba(11, 15, 26, 0.95);
         backdrop-filter: blur(12px);
-
         flex-direction: column;
         justify-content: center;
         gap: 40px;
-
         transition: 0.4s ease;
     }
 
-    /* menú activo */
     .nav-links.active {
         right: 0;
     }
@@ -866,33 +824,21 @@ footer {
     }
 
     /* HERO */
-
     .hero {
-
-        height: auto;
         min-height: 100vh;
-
         padding: 100px 20px 60px;
-
         justify-content: center;
+
+        background-image: url("../images/logo.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
-    .hero h1 {
-        font-size: 28px;
-        display: none;
-    }
-
+    /* ocultos en mobile */
+    .hero h1,
     .hero p {
         display: none;
-        font-size: 14px;
-        line-height: 1.6;
-        max-width: 90%;
-        margin-top: 15px;
-    }
-
-    .hero-bg-logo {
-        width: 90%;
-        opacity: 0.15;
     }
 
     .hero-content {
@@ -909,10 +855,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-
-        height: auto;
         min-height: 100vh;
-
         padding: 100px 20px 40px;
     }
 
@@ -921,21 +864,32 @@ footer {
         font-size: 14px;
         padding: 14px 26px;
         width: auto;
+        z-index: 10;
     }
 
-    /* estado inicial */
+    /* LOGO ANIMACIÓN */
+    .logo {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    /* CARDS */
     .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.6s ease;
     }
 
-    /* cuando entra en pantalla */
     .card.active {
         opacity: 1;
         transform: translateY(0);
     }
 
+    /* FOOTER */
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
@@ -946,57 +900,49 @@ footer {
         flex-direction: row;
     }
 
+    /* GRIDS */
     .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .combo-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  /* Las cards se apilan */
-  .combo-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .combo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-  /* Menos padding para que no se sienta gigante */
-  .combo-card {
-    padding: 25px 20px;
-  }
+    .combo-card {
+        padding: 25px 20px;
+    }
 
-  /* RESULTADOS: pasan a columna */
-  .results {
-    flex-direction: column;
-    gap: 12px;
-  }
+    /* RESULTADOS */
+    .results {
+        flex-direction: column;
+        gap: 12px;
+    }
 
-  .result-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 12px 15px;
-  }
+    .result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 12px 15px;
+    }
 
-  .result-item h3 {
-    font-size: 22px;
-  }
+    .result-item h3 {
+        font-size: 22px;
+    }
 
-  .result-item span {
-    font-size: 12px;
-  }
+    .result-item span {
+        font-size: 12px;
+    }
 
-  /* STEPS más compactos */
-  .steps div {
-    font-size: 14px;
-    padding: 10px 12px;
-  }
+    /* STEPS */
+    .steps div {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
 
-  .steps span {
-    font-size: 13px;
-  }
-  
-
-    
-
+    .steps span {
+        font-size: 13px;
+    }
 }
