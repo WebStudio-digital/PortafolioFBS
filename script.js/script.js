@@ -1,69 +1,25 @@
-const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-});
-
-const glow = document.querySelector(".cursor-glow");
-
-if (glow) {
-  window.addEventListener("mousemove", e => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-  });
-}
-
+// =========================
+// NAV SCROLL + REVEAL (UNIFICADO)
+// =========================
 const nav = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-    const nav = document.getElementById("navbar");
-
-    if (!hamburger || !navLinks || !nav) return;
-
-    // abrir / cerrar hamburguesa
-    hamburger.addEventListener("click", (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("open");
-    });
-
-    // cerrar al click en links
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            hamburger.classList.remove("open");
-        });
-    });
-
-    // cerrar al click afuera
-    document.addEventListener("click", (e) => {
-        const isInsideNav = nav.contains(e.target);
-
-        if (!isInsideNav) {
-            navLinks.classList.remove("active");
-            hamburger.classList.remove("open");
-        }
-    });
+  // NAV
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
 
 });
 
-const cards = document.querySelectorAll(".card");
+
+// =========================
+// INTERSECTION OBSERVER (REVEAL + CARDS)
+// =========================
+const elements = document.querySelectorAll(".reveal, .card");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -75,4 +31,62 @@ const observer = new IntersectionObserver((entries) => {
   threshold: 0.15
 });
 
-cards.forEach(card => observer.observe(card));
+elements.forEach(el => observer.observe(el));
+
+
+// =========================
+// CURSOR GLOW (OPTIMIZADO)
+// =========================
+const glow = document.querySelector(".cursor-glow");
+
+if (glow) {
+  let mouseX = 0;
+  let mouseY = 0;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateGlow() {
+    glow.style.left = mouseX + "px";
+    glow.style.top = mouseY + "px";
+    requestAnimationFrame(animateGlow);
+  }
+
+  animateGlow();
+}
+
+
+// =========================
+// HAMBURGER MENU
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  const nav = document.getElementById("navbar");
+
+  if (!hamburger || !navLinks || !nav) return;
+
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("open");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target)) {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("open");
+    }
+  });
+
+});
